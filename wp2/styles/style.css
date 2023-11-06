@@ -1,12 +1,19 @@
+.main {
+    background-color: peachpuff;
+    box-sizing: border-box;
+}
+
 body {
     display: grid;
     width: 100%;
     height: 800px;
-    grid-template-areas: "h1 h1 h1 h1"
-    "content content sidebar sidebar"
+    grid-template-areas:
+    "header header header header"
+    "content content"
+    "content-1 content-2 sidebar"
+    "content-3 content sidebar"
+    "sidebar sidebar sidebar"
     "footer footer footer footer";
-    grid-template-rows: 1fr 4fr 1fr;
-    grid-template-columns: 2fr 2fr;
     bottom: 5px;
     top: 5px;
     padding: 5px;
@@ -15,57 +22,46 @@ body {
 }
 
 .content {
-    grid-template-areas: "header header"
-    "content-1 content-2"
-    "content-3 content-3";
-    grid-template-rows: 2fr 1fr 1fr;
-    grid-template-columns: 300px 300px;
-    width: 900px;
-    height: 300px;
-    grid-row-start: 2;
-    grid-row-end: 3;
+    background-color: peachpuff;
     grid-area: content;
-}
-
-header {
-    grid-area: header;
-    justify-content: center;
-}
-
-h1 {
-    text-align: center;
-    background-color: rgb(212, 210, 210);
-    width: 1247px;
-    height: 6px;
-    grid-area: header;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    grid-column-start: 1;
-    grid-column-end: 3;
-    font-size: 16px;
-    text-align: center;
-}
-.sidebar {
-    height: 300px;
-    background-color: rgb(130, 201, 130);
-    width: 300px;
-    float: right;
     grid-row-start: 2;
     grid-row-end: 3;
     grid-column-start: 2;
-    grid-column-end: span 3;
+    grid-column-end: 4;
+}
+
+header {
+    text-align: center;
+    background-color: rgb(212, 210, 210);
     display: grid;
+    width: 1247px;
+    height: 6px;
+    grid-area: header;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+.sidebar {
+    height: 525px;
+    background-color: rgb(130, 201, 130);
+    width: 300px;
+    float: right;
+    grid-row-start: 3;
+    grid-row-end: 6;
+    grid-column-start: 2;
+    grid-column-end: 5;
 }
 
 .footer {
     grid-area: footer;
     grid-column: column1-start/column5-end;
     grid-row: row2-start/row6-end;
-    grid-row-start: 6;
-    grid-row-end: 7;
+    grid-row-start: 5;
+    grid-row-end: 6;
     grid-column-start: 1;
     grid-column-end: 4;
-    align-self: self-end;
+    align-self: flex-end;
 }
 
 .content-1 {
@@ -73,10 +69,11 @@ h1 {
     background-color: rgb(228, 216, 115);
     text-align: center;
     grid-area: content-1;
-    grid-row-start: 3;
-    grid-row-end: 4;
-    grid-column-start: 1;
-    width: 200px
+    display: inline;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 4;
 }
 
 .content-2 {
@@ -84,9 +81,15 @@ h1 {
     background-color: rgb(228, 216, 115);
     text-align: center;
     grid-area: content-2;
+    display: inline-block;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 4;
 }
 
 .content-3 {
+display: inline-block;
 background-color: rgb(228, 216, 115);
 text-align: center;
 box-sizing: border-box;
@@ -99,8 +102,8 @@ border: 1px;
 grid-area: content-3;
 grid-row-start: 4;
     grid-row-end: 5;
-    grid-column-start: 1;
-    grid-column-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 4;
 }
 
 .f1 {
@@ -112,11 +115,7 @@ grid-row-start: 4;
     height: 60px;
     text-align: center;
     grid-area: f1;
-    grid-row-start: 6;
-    grid-row-end: 7;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    justify-self: center;
+    display: inline-block;
 }
 
 .f2 {
@@ -128,11 +127,7 @@ grid-row-start: 4;
     height: 60px;
     text-align: center;
     grid-area: f2;
-    display: inline-grid;
-    grid-row-start: 6;
-    grid-row-end: 7;
-    grid-column-start: 2;
-    grid-column-end: 3;
+    display: inline-block;
 }
 
 .f3 {
@@ -144,11 +139,7 @@ grid-row-start: 4;
     height: 60px;
     text-align: center;
     grid-area: f3;
-    display: inline-grid;
-    grid-row-start: 6;
-    grid-row-end: 7;
-    grid-column-start: 3;
-    grid-column-end: 4;
+    display: inline-block;
 }
 
 .f4 {
@@ -160,14 +151,5 @@ grid-row-start: 4;
     height: 60px;
     text-align: center;
     grid-area: f4;
-    display: inline-grid;
-    grid-row-start: 6;
-    grid-row-end: 7;
-    grid-column-start: 4;
-    grid-column-end: 5;
-}
-
-.content {
-    background-color: peachpuff;
-    z-index: -2;
+    display: inline-block;
 }
