@@ -34,8 +34,10 @@ header {
     height: 6px;
     grid-column: main-start/main-end;
     grid-row: row1-start/row2-start;
+    grid-area: header;
 }
 .sidebar {
+    display: grid;
     height: 525px;
     background-color: rgb(130, 201, 130);
     width: 300px;
@@ -47,6 +49,7 @@ header {
 
 .footer {
     grid-row: row1-start/row6-end;
+    grid-area: footer;
 }
 
 
@@ -62,6 +65,7 @@ header {
     text-align: center;
     grid-row: row2-start/row3-start;
     grid-column: content-start/content-end;
+    grid-area: content-1;
 }
 
 .content-2 {
@@ -75,6 +79,7 @@ header {
     text-align: center;
     grid-column: column2-start/column3-end;
     grid-row: row3-start/row4-end; 
+    grid-area: content-2;
 }
 
 .content-3 {
@@ -86,6 +91,7 @@ height: 100px;
 background-color: rgb(228, 216, 115);
 text-align: center;
 box-sizing: border-box;
+grid-area: content-3;
 }
 
 .f1 {
